@@ -12,9 +12,14 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * It uses `MockMvc`, which means it does not involve the actual server.
+ * `MockMvc` stands up the context but without the server, which means it doesn't perform full-stack integration tests.
+ * It does not hit the real HTTP endpoint, therefore, it's a more unit test rather than a full integration test.
+ */
 @SpringBootTest
 @AutoConfigureMockMvc
-class HelloControllerTest {
+class HelloControllerUnitTest {
     @Autowired
     private MockMvc mvc;
 

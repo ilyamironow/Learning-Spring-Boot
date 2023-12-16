@@ -1,6 +1,12 @@
-package com.miilig.myspringapp;/**
- * @author imironov
- * @since 14.12.2023
- */
+package com.miilig.myspringapp;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class HelloController {
+    @GetMapping("/")
+    public String index() {
+        return "Greetings from Spring Boot!";
+    }
 }
